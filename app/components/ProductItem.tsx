@@ -1,27 +1,22 @@
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
-import ProductItem from "./components/ProductItem";
-export default function Index() {
+import products from "@/data/products";
+import React from "react";
+import { Image, StyleSheet, Text, View } from "react-native";
+
+const ProductItem = () => {
   return (
-    <ScrollView
-      style={{
-        backgroundColor: "pink",
-      }}
-    >
-      <View style={styles.container}>
-        <Text style={styles.title}>KDD milk shop</Text>
-        <Text style={styles.description}>
-          We sell KDD milk...obviously, its says it right there in the title,
-          dont y'all read?? gawd.
-        </Text>
-        <Image
-          source={require("../assets/images/kdd.jpg")}
-          style={styles.image}
-        />
-      </View>
-      <ProductItem />
-    </ScrollView>
+    <View style={styles.card}>
+      <Image
+        source={require("../components/chocomilk.png")}
+        style={{
+          height: 150,
+          width: 150,
+        }}
+      />
+      <Text style={styles.description}>{products[0].name}</Text>
+      <Text style={styles.description}>{products[0].price}</Text>
+    </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   image: {
@@ -64,3 +59,5 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
 });
+
+export default ProductItem;
