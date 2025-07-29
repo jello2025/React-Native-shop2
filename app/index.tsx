@@ -1,6 +1,18 @@
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import ProductItem from "./components/ProductItem";
 export default function Index() {
+  const item1 = {
+    image: "",
+    itemName: "Choco milk",
+    price: 3,
+  };
+
+  const item2 = {
+    image: "",
+    itemName: "Banana milk",
+    price: 2,
+  };
+
   return (
     <ScrollView
       style={{
@@ -18,7 +30,8 @@ export default function Index() {
           style={styles.image}
         />
       </View>
-      <ProductItem />
+      <ProductItem itemInfo={item1} />
+      <ProductItem itemInfo={item2} />
     </ScrollView>
   );
 }

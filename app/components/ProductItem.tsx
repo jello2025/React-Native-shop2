@@ -1,19 +1,28 @@
-import products from "@/data/products";
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 
-const ProductItem = () => {
+interface ProductItem {
+  image: string;
+  itemName: string;
+  price: number;
+}
+
+interface ProductItemProps {
+  itemInfo: ProductItem;
+}
+
+const ProductItem = (props: ProductItemProps) => {
   return (
     <View style={styles.card}>
       <Image
-        source={require("../components/chocomilk.png")}
+        source={require(props.itemInfo.image)}
         style={{
           height: 150,
           width: 150,
         }}
       />
-      <Text style={styles.description}>{products[0].name}</Text>
-      <Text style={styles.description}>{products[0].price}</Text>
+      <Text>Product name: {props.itemInfo.itemName}</Text>
+      <Text>Product price: {props.itemInfo.price}</Text>
     </View>
   );
 };
