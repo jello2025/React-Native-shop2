@@ -8,8 +8,6 @@ interface ProductItem {
 }
 
 const ProductItem = (props: ProductItem) => {
-  console.log(props);
-
   return (
     <View style={styles.card}>
       {/* <Image
