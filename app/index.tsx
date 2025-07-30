@@ -1,3 +1,4 @@
+import products from "@/data/products";
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import ProductItem from "./components/ProductItem";
 export default function Index() {
@@ -30,8 +31,14 @@ export default function Index() {
           style={styles.image}
         />
       </View>
-      <ProductItem itemInfo={item1} />
-      <ProductItem itemInfo={item2} />
+
+      {products.map((product) => (
+        <ProductItem
+          itemName={product.name}
+          price={product.price}
+          image={product.image}
+        />
+      ))}
     </ScrollView>
   );
 }
