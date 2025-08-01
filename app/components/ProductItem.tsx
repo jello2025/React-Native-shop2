@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 
 interface ProductItem {
   image: string;
@@ -10,13 +10,13 @@ interface ProductItem {
 const ProductItem = (props: ProductItem) => {
   return (
     <View style={styles.card}>
-      {/* <Image
-        source={require(props.itemInfo.image)}
+      <Image
+        source={{ uri: props.image }}
         style={{
           height: 150,
           width: 150,
         }}
-      /> */}
+      />
       <Text>Product name: {props.itemName}</Text>
       <Text>Product price: {props.price}</Text>
     </View>
